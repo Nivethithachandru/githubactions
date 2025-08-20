@@ -10,6 +10,17 @@ on:
 
 jobs:
   build:
+  issues:
+    types:
+      - opened
+  label_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.MY_TOKEN }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          gh issue edit $ISSUE_URL --add-label "triage"
 
     runs-on: ubuntu-latest
     env:

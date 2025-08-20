@@ -2,14 +2,14 @@ name: Django CI
 
 on:
   issues:
-    types: 
-       - opened 
+    types: [opened]
 
 jobs:
-comment:
+  comment:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repo (not required but often included)
         uses: actions/checkout@v4
 
       - name: Add comment to the issue

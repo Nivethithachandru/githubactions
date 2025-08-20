@@ -1,0 +1,60 @@
+name: Combined Workflow
+
+on:
+  issues:
+    types: [opened]
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  comment:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add comment to the issue
+        env:
+          GH_TOKEN: ${{ secrets.MY_TOKEN }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          echo "Commenting on issue: $ISSUE_URL"
+          gh issue comment "$ISSUE_URL" 
+
+  test:
+    if: github.event_name != 'issues'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade pip setuptools
+          pip freeze >requirements.txt
+          pip install -r requirements.txt
+          pip install Django
+          pip install django-allauth
+          pip install django-crispy-forms
+          pip install django-countries
+          pip install stripe
+          pip install Pillow
+          pip install PyJWT
+          pip install cryptography
+
+      - name: Run Migrations
+        run: |
+          python manage.py makemigrations
+          python manage.py migrate
+
+      - name: Run Tests
+        run: |
+          python manage.py test
+

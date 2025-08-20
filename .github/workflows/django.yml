@@ -1,13 +1,11 @@
 name: Django CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  issues:
+    types: [opened]
 
 jobs:
-label_issue: issues
+comment:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo

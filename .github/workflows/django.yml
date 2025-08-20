@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-label_issue:
+label_issue: issues
     runs-on: ubuntu-latest
     steps:
         - env:

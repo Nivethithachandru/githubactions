@@ -10,9 +10,14 @@ jobs:
 label_issue: issues
     runs-on: ubuntu-latest
     steps:
-        - env:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Add comment to the issue
+        env:
           GH_TOKEN: ${{ secrets.MY_TOKEN }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
+      
     strategy:
       max-parallel: 4
       matrix:

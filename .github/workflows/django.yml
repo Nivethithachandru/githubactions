@@ -7,9 +7,13 @@ on:
     branches: [ "main" ]
 
 jobs:
+label_issue:
   build:
-
     runs-on: ubuntu-latest
+      steps:
+        - env:
+          GH_TOKEN: ${{ secrets.MY_TOKEN }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
     strategy:
       max-parallel: 4
       matrix:

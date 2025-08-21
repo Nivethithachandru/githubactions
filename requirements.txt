@@ -22,7 +22,7 @@ hyperlink==19.0.0
 idna==2.8
 incremental==17.5.0
 isort==4.3.21
-jsmin==2.2.2
+jsmin>=3.0.0
 lazy-object-proxy==1.4.1
 mccabe==0.6.1
 oauthlib==3.1.0
@@ -47,5 +47,6 @@ virtualenv==16.6.1
 virtualenvwrapper-win==1.2.5
 wrapt==1.11.2
 zope.interface==4.6.0
+
 
 

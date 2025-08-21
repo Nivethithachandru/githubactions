@@ -33,7 +33,6 @@ pycodestyle==2.5.0
 pycparser==2.19
 PyHamcrest==1.9.0
 pylint==2.3.1
-python3-openid==3.1.0
 pytz==2018.5
 requests==2.22.0
 requests-oauthlib==1.2.0
@@ -47,6 +46,7 @@ virtualenv==16.6.1
 virtualenvwrapper-win==1.2.5
 wrapt==1.11.2
 zope.interface>=5.5.0
+
 
 
 

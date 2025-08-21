@@ -9,20 +9,7 @@ on:
      branches: [main]
 
 jobs:
-  comment:
-    if: github.event_name == 'issues'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Add comment to the issue
-        env:
-          GH_TOKEN: ${{ secrets.MY_TOKEN }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
-        run: |
-          echo "Commenting on issue: $ISSUE_URL"
-          gh issue comment "$ISSUE_URL" 
-
-  test:
-    if: github.event_name != 'issues'
+  deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:

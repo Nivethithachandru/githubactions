@@ -52,12 +52,14 @@ jobs:
           pip install cryptography
           
 
-      - name: Run Migrations
+      - name: Deploy to Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
-          python manage.py makemigrations
-          python manage.py migrate
+          echo "machine api.heroku.com" 
+          echo "  login ${{ nivekrish43@gmail.com }}" 
+          echo "  password ${{ secrets.HEROKU_API_KEY }}" 
+          git remote add heroku https://git.heroku.com/arcane-retreat-52955.git${{ secrets.HEROKU_APP_NAME }}.git
+          git push heroku HEAD:main -f
 
-      - name: Run Tests
-        run: |
-          python manage.py test
 

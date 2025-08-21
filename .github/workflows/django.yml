@@ -49,6 +49,8 @@ jobs:
           pip install Pillow
           pip install PyJWT
           pip install cryptography
+          
+          echo "python-3.11.9" > runtime.txt
 
       - name: Run Migrations
         run: |

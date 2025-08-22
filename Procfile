@@ -1,2 +1,2 @@
-web: gunicorn Django CI.wsgi
+web: gunicorn .github.wsgi
 

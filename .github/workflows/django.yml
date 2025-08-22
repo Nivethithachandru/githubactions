@@ -34,7 +34,7 @@ jobs:
         pip install Pillow
         pip install PyJWT
         pip install cryptography 
-    - name: Run Tests
+    - name: Run Server
       run: |
         heroku run python3 manage.py migrate
         heroku run python3 manage.py runserver

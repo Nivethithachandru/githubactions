@@ -23,6 +23,7 @@ idna
 incremental
 isort
 jsmin
+jwt
 lazy-object-proxy
 mccabe
 oauthlib
@@ -48,6 +49,7 @@ virtualenv
 virtualenvwrapper-win
 wrapt
 zope.interface
+
 
 
 

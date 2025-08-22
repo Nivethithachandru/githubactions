@@ -36,7 +36,6 @@ jobs:
         pip install cryptography 
     - name: Run Tests
       run: |
-        heroku config:set DISABLE_COLLECTSTATIC=1
         heroku run python manage.py migrate
         heroku logs --tail
 

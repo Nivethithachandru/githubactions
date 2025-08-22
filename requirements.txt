@@ -46,6 +46,3 @@ virtualenv==16.6.1
 virtualenvwrapper-win==1.2.5
 wrapt==1.11.2
 zope.interface==4.6.0
-
-
-

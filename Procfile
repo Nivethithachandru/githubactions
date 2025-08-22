@@ -1,2 +1,3 @@
-web: gunicorn manage.py.wsgi
+web: gunicorn demo.wsgi
+
 

@@ -27,8 +27,6 @@ lazy-object-proxy==1.4.1
 mccabe==0.6.1
 oauthlib==3.1.0
 pep8==1.7.1
-Pillow==6.1.0
-wheel
 psycopg2-binary==2.9.1
 pycodestyle==2.5.0
 pycparser==2.19
@@ -48,6 +46,7 @@ virtualenv==16.6.1
 virtualenvwrapper-win==1.2.5
 wrapt==1.11.2
 zope.interface==4.6.0
+
 
 
 

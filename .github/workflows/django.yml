@@ -36,7 +36,7 @@ jobs:
         pip install cryptography 
     - name: Run Server
       run: |
-        heroku run python3 manage.py migrate
-        heroku run python3 manage.py runserver
-        heroku logs --tail
+        python3 manage.py migrate
+        python3 manage.py runserver 
+       
 

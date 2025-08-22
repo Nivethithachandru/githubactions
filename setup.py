@@ -1,6 +1,5 @@
-setup(
-    name="github-actions",
-    version="0.1.0",  
-    packages=find_packages(),
-    install_requires=open("requirements.txt").read().splitlines(),
-)
+def get_version():
+    version = {}
+    with open("core/__init__.py") as f:  # or maybe demo/__init__.py
+        exec(f.read(), version)
+    return version["__version__"]

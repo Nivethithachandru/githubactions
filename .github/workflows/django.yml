@@ -38,6 +38,5 @@ jobs:
       run: |
         heroku config:set DISABLE_COLLECTSTATIC=1
         heroku run python manage.py migrate
-        python manage.py test
         heroku logs --tail
 

@@ -1,4 +1,5 @@
 setuptools
+gunicorn
 asgiref
 asn1crypto
 astroid
@@ -49,6 +50,7 @@ virtualenv
 virtualenvwrapper-win
 wrapt
 zope.interface
+
 
 
 

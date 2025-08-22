@@ -1,2 +1,2 @@
-web: gunicorn githubactions.wsgi
+web: gunicorn .github.wsgi
 

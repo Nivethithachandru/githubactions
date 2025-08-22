@@ -27,6 +27,7 @@ jobs:
          source venv/bin/activate
     - name: Install Dependencies
       run: |
+        pip install "setuptools<69"
         pip install --upgrade pip setuptools
         pip install --upgrade pip
         pip freeze >requirements.txt

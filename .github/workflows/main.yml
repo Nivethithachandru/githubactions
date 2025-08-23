@@ -1,0 +1,40 @@
+name: Django CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: self-hosted, windows
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ['3.8']
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Dependencies
+      run: |
+        pip install "setuptools<69"
+        pip install --upgrade pip setuptools
+        pip install --upgrade pip
+        pip install gunicorn
+        pip freeze >requirements.txt
+        pip install -r requirements.txt
+        pip install Django
+        pip install django-allauth
+        pip install django-crispy-forms
+        pip install django-countries
+        pip install stripe
+        pip install Pillow
+        pip install PyJWT
+        pip install cryptography 
+    - name: Run Server
+      run: |
+        python3 manage.py migrate
+        python3 manage.py runserver 

@@ -36,7 +36,7 @@ jobs:
         pip install cryptography 
     - name: Run Server
       run: |
-        python3 manage.py migrate
-        python3 manage.py runserver 
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8080 
        
 

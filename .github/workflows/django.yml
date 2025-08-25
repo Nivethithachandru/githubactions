@@ -38,6 +38,6 @@ jobs:
     - name: Run Server
       run: |
         python manage.py migrate
-        python manage.py runserver 10.0.0.115:8080
+        python manage.py runserver
        
 

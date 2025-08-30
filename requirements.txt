@@ -18,7 +18,6 @@ Django
 django-allauth
 django-countries
 django-crispy-forms
-crispy-bootstrap4
 django-tinymce4-lite
 hyperlink
 idna
@@ -51,6 +50,7 @@ virtualenv
 virtualenvwrapper-win
 wrapt
 zope.interface
+
 
 
 

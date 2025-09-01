@@ -35,9 +35,5 @@ jobs:
         pip install Pillow
         pip install PyJWT
         pip install cryptography 
-    - name: Run Server
-      run: |
-        python manage.py migrate
-        python manage.py runserver 0.0.0.0:8000
-       
+   
 

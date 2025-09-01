@@ -32,7 +32,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
+    'allauth.account.midlleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'demo.urls'
@@ -73,6 +73,7 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
+
 if ENVIRONMENT == 'production':
     DEBUG = True
     SECRET_KEY = os.getenv('SECRET_KEY')

@@ -1,8 +1,11 @@
 name: Django CI
 
 on:
- workflow_dispatch:
-
+  push:
+    branches:
+      - main
+      - nive
+      - 'releases/**'
 jobs:
   build:
 
@@ -35,5 +38,11 @@ jobs:
         pip install Pillow
         pip install PyJWT
         pip install cryptography 
+
+    - name: Run Server
+      run: |
+        python3 manage.py migrate
+        python3 manage.py runserver 0.0.0.0:8000  
+
    
 
